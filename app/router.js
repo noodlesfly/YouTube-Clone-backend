@@ -19,6 +19,7 @@ module.exports = app => {
   // 阿里云vod
   router.get('/vod/CreateUploadVideo', auth, controller.vod.createUploadVideo);
   router.post('/vod/RefreshUploadVideo', auth, controller.vod.refreshUploadVideo);
+  router.get('/vod/getUploadAuth', controller.vod.getUploadAuth);
   // 视频
   router.post('/videos', auth, controller.video.createVideo);
   router.get('/videos/:videoId', app.middleware.auth({ required: false }), controller.video.getVideo);
